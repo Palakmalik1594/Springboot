@@ -1,0 +1,24 @@
+package com.spring.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.spring.dao.EmployeeDao;
+import com.spring.dto.Employee;
+
+@Service
+public class EmployeeService {
+	@Autowired
+	EmployeeDao dao;
+	public void insertEmployee(Employee e) {
+		if(dao.findById(e.getId())==null) {
+			dao.insert(e);
+		}else {
+			System.out.println("Data exist");
+		}
+		
+		
+	}
+	
+
+}

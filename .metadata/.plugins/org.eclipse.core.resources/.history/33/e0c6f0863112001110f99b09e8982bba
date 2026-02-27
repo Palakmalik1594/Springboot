@@ -1,0 +1,14 @@
+package com.capgemini.springbootbasic;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Cricketer {
+	private String name;
+	private String role;
+	private int runs;
+	private int no_of_match;
+	private double average;
+	
+
+}

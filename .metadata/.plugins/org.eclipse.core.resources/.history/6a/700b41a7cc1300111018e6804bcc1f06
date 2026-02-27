@@ -1,0 +1,14 @@
+<html>
+<head>User Register Page</head>
+
+<form action="create-account">
+Name:<input type="text" name="name"><br/>
+EmailId:<input type="text" name="email"><br/>
+Contact: <input type="number" name="contact"><br/>
+<input type="submit" name="Register"><br/>
+
+
+</form>
+
+
+</html>

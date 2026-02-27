@@ -1,0 +1,67 @@
+package com.spring.dao;
+
+import javax.persistence.EntityManager;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.spring.dto.Employee;
+import com.spring.main.JpaUtil;
+
+
+@Repository
+public class EmployeeDao {
+	
+	
+	@Autowired
+	JpaUtil jpa;
+	
+	EntityManager em=jpa.getEntityManager();
+	
+	public void insert(Employee e) {
+		
+		em.getTransaction().begin();
+		Employee employee = findById(e.getId());
+		if(employee == null) {
+			em.persist(e);
+		}else {
+			System.out.println("Data Exist");
+		}
+		em.getTransaction().commit();
+	}
+	
+	public Employee findById(int id) {
+		return em.find(Employee.class, id);
+	}
+	
+	public void delete(int id) {
+	    em.getTransaction().begin();
+	    Employee emp = em.find(Employee.class, id);
+
+	    if (emp != null) {
+	        em.remove(emp);
+	        System.out.println("Employee deleted successfully!");
+	    } else {
+	        System.out.println("Employee not found!");
+	    }
+
+	    em.getTransaction().commit();
+	}
+	
+	public void update(Employee e) {
+	    em.getTransaction().begin();
+
+	    Employee emp = em.find(Employee.class, e.getId());
+	    if (emp != null) {
+	        emp.setName(e.getName());
+	        emp.setSalary(e.getSalary());
+	        System.out.println("Employee updated successfully!");
+	    } else {
+	        System.out.println("Employee not found!");
+	    }
+
+	    em.getTransaction().commit();
+	}
+	
+	
+}

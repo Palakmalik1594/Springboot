@@ -1,0 +1,22 @@
+package com.capgemini.springbootbasic;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CustomerController {
+	@Autowired
+	CustomerJpaRepository customerjpa;
+	@PostMapping("/customers")
+	public List<Customer> saveAllCustomers(@RequestBody List<Customer> customers) {
+	    return customerjpa.saveAll(customers);
+	}
+	
+	
+	
+
+}

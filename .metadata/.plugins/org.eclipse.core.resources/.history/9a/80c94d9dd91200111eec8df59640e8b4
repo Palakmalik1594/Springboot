@@ -1,0 +1,110 @@
+package com.capgemini.springbootbasic;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class DemoController {
+	
+	@Autowired
+	CarJpaRepository carjpa;
+	
+	//@GetMapping("/a")
+	@PostMapping("/a")
+	//@ResponseBody
+//	public String hello() {
+//		return "hello.html";
+//	}
+	
+	public List<String> hello() {
+		return List.of("palak","priya","prisha");
+	}
+	@PostMapping("/add")
+	public String createPlayer(@RequestBody Cricketer c) {
+		System.out.println(c);
+		return c.toString();
+		
+	}
+	@PostMapping("/car")
+	public String createcar(@RequestBody Car c) {
+		Car car=carjpa.save(c);
+		//System.out.println(c);
+		return car.toString();
+		
+	}
+	@GetMapping("/find-id")
+	public String getById(@RequestParam int id) {
+		Optional<Car> option=carjpa.findById(id);
+		return option.isPresent()?option.get().toString():"Data not exist";
+		
+	}
+	@GetMapping("/find-all")
+	public List getfindall(){
+		return carjpa.findAll();
+	}
+	@PostMapping("/person")
+	public String createperson(@RequestBody Person p) {
+		System.out.println(p);
+		return p.toString();
+		
+	}
+	@DeleteMapping("/delete-id/{id}")
+	//https://localhost:9090/delete-id/1
+	public boolean deleteCar(@PathVariable int id) {
+		Optional<Car> option=carjpa.findById(id);
+		if(option.isPresent()) {
+			carjpa.delete(option.get());
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	@PutMapping("/update-car/{id}")
+	public boolean updateCar(@PathVariable int id,@RequestBody Car c) {
+		Optional<Car> option=carjpa.findById(id);
+		if(option.isPresent()) {
+			Car car=option.get();
+			car.setBrand(c.getBrand());
+			car.setPrice(c.getPrice());
+			carjpa.save(car);
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	//->{"brand":"A"
+	public boolean updateCarData(@PathVariable int id,@RequestBody Car c) {
+		Optional<Car> option=carjpa.findById(id);
+		if(option.isPresent()) {
+			Car car=option.get();
+			if(c.getBrand()!=null) {
+				car.setBrand(c.getBrand());
+			}else if(c.getPrice()!=0.0) {
+				car.setPrice(c.getPrice());
+			}
+			carjpa.save(car);
+			return true;
+		}else {
+			return false;
+		}
+		
+	}
+	
+	
+	
+
+}

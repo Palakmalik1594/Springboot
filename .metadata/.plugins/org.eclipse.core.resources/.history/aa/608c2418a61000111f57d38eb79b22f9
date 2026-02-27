@@ -1,0 +1,30 @@
+package com.classlevel;
+
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Value;
+
+public class Mobile {
+	@Value("345874387")
+	private String number;
+
+	public String getNumber() {
+		return number;
+	}
+	
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
+	private Scanner scan;
+
+	public Scanner getScan() {
+		return scan;
+	}
+
+
+	public void setScan(Scanner scan) {
+		this.scan = scan;
+	}
+
+}

@@ -1,0 +1,8 @@
+package com.classlevel;
+
+public class Person {
+	public static void message() {
+		System.out.println("Hii");
+	}
+
+}

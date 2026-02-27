@@ -1,0 +1,19 @@
+package com.capgemini.springbootbasic;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CustomerController {
+	
+	CustomerJpaRepository customerjpa;
+	@PostMapping("/customer")
+	public String createcustomer(@RequestBody Customer c) {
+		Customer customer=customerjpa.save(c);
+		//System.out.println(c);
+		return customer.toString();
+		
+	}
+
+}

@@ -1,0 +1,40 @@
+package com.capgemini.springbootbasic;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class DemoController {
+	
+	//@GetMapping("/a")
+	@PostMapping("/a")
+	//@ResponseBody
+//	public String hello() {
+//		return "hello.html";
+//	}
+	
+	public List<String> hello() {
+		return List.of("palak","priya","prisha");
+	}
+	@PostMapping("/add")
+	public String createPlayer(@RequestBody Cricketer c) {
+		System.out.println(c);
+		return c.toString();
+		
+	}
+	@PostMapping("/car")
+	public String createPlayer(@RequestBody Car cc) {
+		System.out.println(cc);
+		return cc.toString();
+		
+	}
+	
+	
+
+}
