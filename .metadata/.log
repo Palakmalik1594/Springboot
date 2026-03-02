@@ -5215,3 +5215,57 @@ java.lang.NullPointerException
 !MESSAGE Errors running builder 'Java Builder' on project 'ClassLevelConfiguration'.
 !STACK 0
 java.lang.NullPointerException
+
+!ENTRY org.eclipse.core.resources 4 2 2026-03-02 18:55:34.068
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-03-02 18:55:34.077
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-03-02 18:55:34.079
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.core.resources 4 75 2026-03-02 18:55:34.108
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jdt.core 4 75 2026-03-02 18:55:34.108
+!MESSAGE Errors running builder 'Java Builder' on project 'ClassLevelConfiguration'.
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.core.resources 4 2 2026-03-02 19:00:34.327
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-03-02 19:00:34.349
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-03-02 19:00:34.354
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.core.resources 4 75 2026-03-02 19:00:34.416
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jdt.core 4 75 2026-03-02 19:00:34.418
+!MESSAGE Errors running builder 'Java Builder' on project 'ClassLevelConfiguration'.
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.core.resources 4 2 2026-03-02 19:05:34.592
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-03-02 19:05:34.602
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-03-02 19:05:34.602
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.core.resources 4 75 2026-03-02 19:05:34.629
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jdt.core 4 75 2026-03-02 19:05:34.629
+!MESSAGE Errors running builder 'Java Builder' on project 'ClassLevelConfiguration'.
+!STACK 0
+java.lang.NullPointerException
