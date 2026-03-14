@@ -1,8 +1,0 @@
-package com.classlevel.prac;
-
-import org.springframework.stereotype.Component;
-
-@Component
-class CreditCard implements Payment{
-
-}

@@ -1,6 +1,0 @@
-<html>
-<head>
-login user
-</head>
-<body>
-<form action="logincheck" method="post"></form></body></html>

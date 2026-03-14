@@ -1,9 +1,0 @@
-package com.capgemini.springmvcboot;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.capgemini.com.product_case_study.dto.Category;
-
-public interface UsersJpaRepository extends JpaRepository<Users, Integer>{
-
-}

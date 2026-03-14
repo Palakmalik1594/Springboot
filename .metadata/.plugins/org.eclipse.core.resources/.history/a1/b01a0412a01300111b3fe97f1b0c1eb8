@@ -1,6 +1,0 @@
-package com.capgemini.com.product_case_study.dao;
-
-public class CategoryJpaRepository extends JpaRepository<Category,Integer>{
-	
-
-}

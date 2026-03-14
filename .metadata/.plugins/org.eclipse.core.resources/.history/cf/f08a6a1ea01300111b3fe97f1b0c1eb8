@@ -1,5 +1,0 @@
-package com.capgemini.com.product_case_study.exception;
-
-public class CategoryNotFoundException {
-
-}
